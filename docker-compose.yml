@@ -1,0 +1,18 @@
+
+
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: ahmed
+      POSTGRES_PASSWORD: ahmed
+      POSTGRES_DB: db1
+    ports:
+      - "5432:5432"
+
+  api:
+    build: ./api
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
