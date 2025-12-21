@@ -20,7 +20,7 @@ Le but de ce TP :
 - exposer un endpoint API simple
 
 # Mise en place de Feast
-![alt text](image-1.png)
+![alt text](capturesTP3/image-1.png)
 
 ### Rôle du conteneur Feast
 
@@ -34,7 +34,7 @@ On utilise **docker compose exec feast** pour enregistrer les définitions avec 
 
 # Définition du Feature Store
 
-![alt text](image-2.png)
+![alt text](capturesTP3/image-2.png)
 # Définition du Feature Store
 
 ## Entity
@@ -52,9 +52,9 @@ Chaque source Feast sélectionne uniquement `user_id`, `as_of` et les colonnes d
 ## FeatureViews et feast apply
 Les FeatureViews regroupent les features par entité et par source (profil d’abonnement, usage, paiements, support).
 
-![alt text](image-3.png)
+![alt text](capturesTP3/image-3.png)
 
-![alt text](image-4.png)
+![alt text](capturesTP3/image-4.png)
 
 
 ## Rôle de feast apply
@@ -64,11 +64,11 @@ La commande `feast apply` permet de déployer la configuration du Feature Store.
 Cette étape prépare également l’infrastructure nécessaire côté stockage, notamment en s’assurant que les structures requises sont disponibles dans PostgreSQL, afin que les features puissent ensuite être récupérées aussi bien en mode offline qu’en mode online.
 
 # Récupération offline & online
-![alt text](image-5.png)
+![alt text](capturesTP3/image-5.png)
 
-![alt text](image-6.png)
+![alt text](capturesTP3/image-6.png)
 
-![alt text](image-7.png)
+![alt text](capturesTP3/image-7.png)
 
 
 ### Temporal correctness avec Feast
@@ -78,20 +78,20 @@ Feast garantit la cohérence temporelle en effectuant une jointure *point-in-tim
 Ce mécanisme permet d’éviter toute fuite d’information depuis le futur (*data leakage*) et assure que le modèle est entraîné dans des conditions cohérentes avec celles rencontrées en production.
 
 
-![alt text](image-8.png)
+![alt text](capturesTP3/image-8.png)
 
 En revanche, si l’on interroge un `user_id` inexistant ou pour lequel aucune feature n’a été matérialisée dans l’Online Store, Feast ne renvoie pas d’erreur. Les valeurs retournées pour les features demandées sont simplement nulles (`None`), ce qui permet de gérer proprement ces cas côté application.
 
-![alt text](image-9.png)
+![alt text](capturesTP3/image-9.png)
 
 
-![alt text](image-10.png)
+![alt text](capturesTP3/image-10.png)
 
 
-![alt text](image-11.png)
+![alt text](capturesTP3/image-11.png)
 
 
-![alt text](image-12.png)
+![alt text](capturesTP3/image-12.png)
 
 
 
