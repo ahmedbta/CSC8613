@@ -1,4 +1,4 @@
-# Rapport TP2 / CSC8613
+# Rapport TP3 / CSC8613
 
 # Contexte
 Lors des TP précédents, nous avons mis en place le pipeline de données, comprenant l’ingestion des données, leur validation à l’aide de Great Expectations et la création de snapshots temporels afin de figer l’état des données à des dates de référence.
