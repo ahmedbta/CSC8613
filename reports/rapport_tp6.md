@@ -44,3 +44,12 @@ ex3 Créer le flow Prefect train_and_compare_flow (train → eval → compare �
 
 
  ![alt text](image-8.png)
+
+
+ ex5
+
+
+ ![alt text](image-10.png)
+
+ L'API doit être redémarrée pour qu'elle puisse recharger le modèle depuis le registre MLflow et ainsi     
+  utiliser la nouvelle version qui vient d'être promue en 'Production' après le réentraînement.
